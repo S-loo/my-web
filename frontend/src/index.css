@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pearl-bg: #f8f9fa;
+  --color-pearl-surface: #ffffff;
+  --color-pearl-primary: #0066cc;
+  --color-pearl-secondary: #6610f2;
+  --color-pearl-border: #e2e8f0;
+  --color-pearl-text: #212529;
+
+  --color-void-bg: #0d1117;
+  --color-void-surface: #161b22;
+  --color-void-primary: #58a6ff;
+  --color-void-secondary: #79c0ff;
+  --color-void-border: #30363d;
+  --color-void-text: #c9d1d9;
+}
+
+:root {
+  --background: var(--color-pearl-bg);
+  --surface: var(--color-pearl-surface);
+  --foreground: var(--color-pearl-text);
+  --primary: var(--color-pearl-primary);
+  --secondary: var(--color-pearl-secondary);
+  --border: var(--color-pearl-border);
+  --radius-standard: 8px;
+}
+
+.dark {
+  --background: var(--color-void-bg);
+  --surface: var(--color-void-surface);
+  --foreground: var(--color-void-text);
+  --primary: var(--color-void-primary);
+  --secondary: var(--color-void-secondary);
+  --border: var(--color-void-border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  transition: background-color 150ms linear, color 150ms linear;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  border-color: var(--border);
+}
+
+/* Uncodixify Standards */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--foreground);
+  margin: 0;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+button {
+  cursor: pointer;
+  transition: all 150ms linear;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 150ms linear;
+}
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-standard);
+  padding: 1.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
