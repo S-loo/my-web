@@ -13,6 +13,7 @@ import MarketplacePage from './pages/MarketplacePage';
 import ContactPage from './pages/ContactPage';
 import CartPage from './pages/CartPage';
 import AnalyticsPage from './pages/AnalyticsPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 
 import { CartProvider } from './context/CartContext';
 
@@ -32,6 +33,7 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/analytics" element={<AnalyticsPage />} />
+            <Route path="/projects/u/:slug" element={<ProjectDetailPage />} />
               {/* Fallback to Home */}
               <Route path="*" element={<HomePage />} />
             </Route>

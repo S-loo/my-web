@@ -9,6 +9,10 @@ export const portfolioService = {
     const response = await api.get(`/projects/${id}/`);
     return response.data;
   },
+  getProjectBySlug: async (slug) => {
+    const response = await api.get(`/projects/u/${slug}/`);
+    return response.data;
+  },
 };
 
 export const blogService = {
