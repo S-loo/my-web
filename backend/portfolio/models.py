@@ -7,7 +7,7 @@ class Project(models.Model):
     github_link = models.URLField(blank=True, null=True)
     live_link = models.URLField(blank=True, null=True)
     image = models.ImageField(upload_to='projects/', blank=True, null=True)
-    slug = models.SlugField(max_length=200, unique=True, blank=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
     content = models.TextField(blank=True, help_text="Detailed case study content in Markdown.")
     created_at = models.DateTimeField(auto_now_add=True)
 
