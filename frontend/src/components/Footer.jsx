@@ -3,43 +3,49 @@ import { Github, Twitter, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12">
+    <footer className="bg-zinc-50 dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-900 py-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12">
         <div className="max-w-sm">
-          <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">Silas Portfolio</h3>
-          <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-            Full-Stack Developer focused on building functional, maintainable web systems.
+          <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-200 mb-3 uppercase tracking-wider">Silas Ngetich</h3>
+          <p className="text-sm text-zinc-500 dark:text-zinc-500 leading-relaxed">
+            Software Engineering. <br />
+            Building functional, maintainable web systems with Django & React.
           </p>
         </div>
         
         <div className="flex gap-16">
           <div>
-            <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-tighter mb-4">Connect</h4>
+            <h4 className="text-[10px] font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-[0.2em] mb-4">Connect</h4>
             <div className="flex flex-col gap-2">
-              <a href="#" className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">
-                <Github size={14} /> GitHub
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors">
+                <Github size={12} /> GitHub
               </a>
-              <a href="#" className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">
-                <Linkedin size={14} /> LinkedIn
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors">
+                <Linkedin size={12} /> LinkedIn
               </a>
             </div>
           </div>
           
           <div>
-            <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-tighter mb-4">Project</h4>
+            <h4 className="text-[10px] font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-[0.2em] mb-4">Navigation</h4>
             <div className="flex flex-col gap-2">
-              <a href="/portfolio" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600">Portfolio</a>
-              <a href="/blog" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600">Blog</a>
-              <a href="/marketplace" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600">Marketplace</a>
+              <a href="/portfolio" className="text-xs text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors">Portfolio</a>
+              <a href="/blog" className="text-xs text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors">Writing</a>
+              <a href="/marketplace" className="text-xs text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors">Marketplace</a>
             </div>
           </div>
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-100 dark:border-slate-800/50">
-        <p className="text-xs text-slate-400 dark:text-slate-600 text-center">
-          © {new Date().getFullYear()} Silas Ngetich. Normal UI Standard.
-        </p>
+      <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-zinc-100 dark:border-zinc-900/50">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[10px] text-zinc-400 dark:text-zinc-600 font-mono">
+            © {new Date().getFullYear()} Silas Ngetich. All rights reserved.
+          </p>
+          <p className="text-[10px] text-zinc-400 dark:text-zinc-600 font-mono">
+            Normal UI Standard v1.0
+          </p>
+        </div>
       </div>
     </footer>
   );

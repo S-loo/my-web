@@ -27,12 +27,23 @@ export const blogService = {
 };
 
 export const marketplaceService = {
-  getProducts: async () => {
-    const response = await api.get('/marketplace/products/');
+  getProducts: async (params) => {
+    const response = await api.get('/marketplace/products/', { params });
     return response.data;
   },
   getProduct: async (id) => {
     const response = await api.get(`/marketplace/products/${id}/`);
+    return response.data;
+  },
+  getCategories: async () => {
+    const response = await api.get('/marketplace/categories/');
+    return response.data;
+  },
+};
+
+export const analyticsService = {
+  getDashboardData: async () => {
+    const response = await api.get('/analytics/dashboard/');
     return response.data;
   },
 };

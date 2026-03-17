@@ -27,27 +27,49 @@ const HomePage = () => {
       </section>
 
       {/* Featured Areas */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-900">
+      <section className="py-20 bg-slate-50 dark:bg-slate-900 transition-colors">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FeatureItem 
-              icon={<Code className="w-5 h-5 text-blue-600" />}
+              icon={<Code className="w-5 h-5 text-zinc-900 dark:text-zinc-100" />}
               title="Portfolio"
               description="A collection of production-ready projects and case studies."
               link="/portfolio"
             />
             <FeatureItem 
-              icon={<BookOpen className="w-5 h-5 text-indigo-600" />}
+              icon={<BookOpen className="w-5 h-5 text-zinc-900 dark:text-zinc-100" />}
               title="Blog"
               description="Technical deep dives and notes on software engineering."
               link="/blog"
             />
             <FeatureItem 
-              icon={<ShoppingBag className="w-5 h-5 text-slate-900 dark:text-white" />}
+              icon={<ShoppingBag className="w-5 h-5 text-zinc-900 dark:text-zinc-100" />}
               title="Marketplace"
               description="Functional components and templates for your next project."
               link="/marketplace"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack Section */}
+      <section className="py-24 bg-white dark:bg-zinc-950 transition-colors">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row gap-12 items-start">
+            <div className="md:w-1/3">
+              <h2 className="text-xs font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-widest mb-4">Core Stack</h2>
+              <p className="text-sm text-zinc-500 dark:text-zinc-500 leading-relaxed italic">
+                A predictable, robust collection of tools chosen for maintainable architectures.
+              </p>
+            </div>
+            <div className="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-12">
+              <TechItem name="Django" category="Backend" />
+              <TechItem name="React" category="Frontend" />
+              <TechItem name="PostgreSQL" category="Database" />
+              <TechItem name="Redis" category="Caching" />
+              <TechItem name="Docker" category="Ops" />
+              <TechItem name="Tailwind" category="Styling" />
+            </div>
           </div>
         </div>
       </section>
@@ -76,6 +98,13 @@ const FeatureItem = ({ icon, title, description, link }) => (
     <Link to={link} className="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
       Browse {title} <ArrowRight className="w-3 h-3" />
     </Link>
+  </div>
+);
+
+const TechItem = ({ name, category }) => (
+  <div className="flex flex-col gap-1 group">
+    <span className="text-sm font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-amber-500 transition-colors">{name}</span>
+    <span className="text-[10px] text-zinc-400 dark:text-zinc-700 font-mono uppercase tracking-tighter">{category}</span>
   </div>
 );
 

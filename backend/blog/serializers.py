@@ -11,8 +11,11 @@ class TagSerializer(serializers.ModelSerializer):
 class BlogPostSerializer(serializers.ModelSerializer):
     author = UserSerializer(read_only=True)
     tags = TagSerializer(many=True, read_only=True)
+    read_time = serializers.ReadOnlyField()
 
     class Meta:
         model = BlogPost
-        fields = '__all__'
+        fields = ('id', 'title', 'slug', 'content', 'cover_image', 'author', 'tags', 
+                  'created_at', 'updated_at', 'is_published', 'meta_description', 
+                  'meta_keywords', 'read_time')
         read_only_fields = ('slug', 'created_at', 'updated_at', 'author')

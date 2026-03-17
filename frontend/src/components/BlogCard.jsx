@@ -12,26 +12,31 @@ const BlogCard = ({ post }) => {
     <article className="group">
       <div className="flex flex-col md:flex-row gap-6 md:gap-12">
         <div className="md:w-32 flex-shrink-0 pt-1">
-          <time className="text-xs font-semibold text-slate-400 uppercase tracking-tight">
+          <time className="text-[10px] font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-widest block mb-1">
             {formattedDate}
           </time>
+          {post.read_time && (
+            <span className="text-[10px] font-mono text-zinc-300 dark:text-zinc-700 italic">
+              {post.read_time} min read
+            </span>
+          )}
         </div>
         
         <div className="flex-grow">
           <Link to={`/blog/${post.slug}`} className="block group mb-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+            <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-amber-600 dark:group-hover:text-amber-500 transition-colors">
               {post.title}
             </h2>
           </Link>
           
-          <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">
-            {post.content.substring(0, 200)}...
+          <p className="text-sm text-zinc-500 dark:text-zinc-500 leading-relaxed mb-4 line-clamp-2 italic">
+            {post.meta_description || (post.content.substring(0, 160) + '...')}
           </p>
           
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             {post.tags?.map(tag => (
-              <span key={tag.id} className="text-[10px] font-bold text-slate-400 uppercase tracking-widest border border-slate-100 dark:border-slate-800 px-1.5 py-0.5 rounded">
-                #{tag.name}
+              <span key={tag.id} className="text-[9px] font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-[0.2em] border border-zinc-100 dark:border-zinc-900 px-1.5 py-0.5 rounded">
+                {tag.name}
               </span>
             ))}
           </div>
