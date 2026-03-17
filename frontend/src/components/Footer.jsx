@@ -3,7 +3,7 @@ import { Github, Twitter, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-50 dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-900 py-12 transition-colors duration-300">
+    <footer className="bg-[#0b0e14] border-t border-zinc-800/50 py-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12">
         <div className="max-w-sm">
           <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-200 mb-3 uppercase tracking-wider">Silas Ngetich</h3>
